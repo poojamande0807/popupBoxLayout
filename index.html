@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Box</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .centered-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            border: black;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .popup-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); 
+            z-index: 999; 
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background-color:hsl(0, 85%, 54%);
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            max-width: 80%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: black 2px;
+        }
+
+        .centered-button:active {
+            display: none;
+        }
+
+        .centered-button:active + .popup-container {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <button class="centered-button">read info</button>
+    <div class="popup-container">
+        <div class="popup-content">
+            <h2>This is the info</h2>
+        </div>
+    </div>
+
+    
+</body>
+</html>
